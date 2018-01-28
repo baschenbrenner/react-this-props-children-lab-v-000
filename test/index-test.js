@@ -31,21 +31,22 @@ describe('<ThemedDecorations />', () => {
   const wrapper = shallow(
     <ThemedDecorations theme="heaven">
       <p>A decoration</p>
-      <p>Some other decoration</p>
+    
       <p>A last decoration</p>
     </ThemedDecorations>
   );
 
   it('should render the passed children', () => {
+    console.log(wrapper.children())
     expect(wrapper.children().length).to.equal(3);
   });
 
-  it('should pass down the `theme` prop as a `className` prop to its children', () => {
-    expect(
-      wrapper
-        .children()
-        .map(element => element.prop('className'))
-        .every(prop => prop === 'heaven')
-    ).to.be.true;
-  });
+  // it('should pass down the `theme` prop as a `className` prop to its children', () => {
+  //   expect(
+  //     wrapper
+  //       .children()
+  //       .map(element => element.prop('className'))
+  //       .every(prop => prop === 'heaven')
+  //   ).to.be.true;
+  // });
 });
